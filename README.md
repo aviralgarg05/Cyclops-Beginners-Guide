@@ -54,7 +54,7 @@ This repository contains the configurations and scripts to deploy MyApp using Cy
 Use port-forwarding to access the application:
 ```bash
 kubectl port-forward svc/myapp-service 8881:80
-
+```
 Navigate to http://localhost:8881 to see the application running.
 
 ### Contributing
