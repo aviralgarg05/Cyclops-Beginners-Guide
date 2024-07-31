@@ -4,6 +4,7 @@ Welcome to the **Cyclops Beginner's Guide**! This repository is your starting po
 
 ### Back Story
 While creating the Automatic Web App, I inurred various issues, missing documentations, guides, tutorials and error solving cases.... Hence to prevent all such here's a beginners guide for working on Cyclops-UI using Kubernetes Engine and Docker.
+<br>
 [![Cyclops Version](https://img.shields.io/badge/Cyclops-v1.0-blue)](https://github.com/your-repo/cyclops/releases) [![Kubernetes Version](https://img.shields.io/badge/Kubernetes-v1.22-green)](https://kubernetes.io/docs/home/)
 
 ## 🚀 Table of Contents
