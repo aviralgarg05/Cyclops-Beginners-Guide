@@ -1,7 +1,9 @@
 # Cyclops Beginner's Guide
 
-Welcome to the **Cyclops Beginner's Guide**! This repository is your starting point for mastering Cyclops with Kubernetes. Whether you're a beginner or looking to refresh your knowledge, this guide will provide you with essential tools and insights to get up and running quickly.
+Welcome to the **Cyclops Beginner's Guide**! This repository is your starting point for mastering Cyclops with Kubernetes. This guide has been created after successfully deploying a sample web application using Docker and Kubernetes, and it will provide you with essential tools and insights to get up and running quickly with Cyclops.
 
+### Back Story
+While creating the Automatic Web App, I inurred various issues, missing documentations, guides, tutorials and error solving cases.... Hence to prevent all such here's a beginners guide for working on Cyclops-UI using Kubernetes Engine and Docker.
 [![Cyclops Version](https://img.shields.io/badge/Cyclops-v1.0-blue)](https://github.com/your-repo/cyclops/releases) [![Kubernetes Version](https://img.shields.io/badge/Kubernetes-v1.22-green)](https://kubernetes.io/docs/home/)
 
 ## 🚀 Table of Contents
@@ -26,7 +28,7 @@ Welcome to the **Cyclops Beginner's Guide**! This repository is your starting po
 
 ## 📝 Introduction
 
-Cyclops simplifies Kubernetes management with an easy-to-use interface. This guide will help you install and configure Cyclops, deploy applications, and troubleshoot common issues.
+Cyclops simplifies Kubernetes management with an easy-to-use interface. This guide, created after deploying a web application using Docker and Kubernetes, will help you install and configure Cyclops, deploy applications, and troubleshoot common issues effectively.
 
 ![Cyclops Overview](https://via.placeholder.com/800x400.png?text=Cyclops+Overview)
 
@@ -108,19 +110,33 @@ Before you begin, ensure you have:
 
 ### Deploy a Sample Application
 
-1. **Create a Deployment:**
+This section walks you through deploying a sample web application that was used to create this guide.
+
+1. **Create a Docker Image:**
+
+   Follow the Dockerfile and `nginx.conf` in the repository to build a Docker image for the sample application.
+
+2. **Build and Push Docker Image:**
 
    ```bash
-   kubectl create deployment nginx --image=nginx
+   docker build -t web-app:latest .
+   docker tag web-app:latest your-dockerhub-username/web-app:latest
+   docker push your-dockerhub-username/web-app:latest
    ```
 
-2. **Expose the Deployment:**
+3. **Create a Kubernetes Deployment:**
 
    ```bash
-   kubectl expose deployment nginx --port=80 --type=NodePort
+   kubectl create deployment web-app --image=your-dockerhub-username/web-app:latest
    ```
 
-3. **Verify Deployment and Service:**
+4. **Expose the Deployment:**
+
+   ```bash
+   kubectl expose deployment web-app --port=80 --type=NodePort
+   ```
+
+5. **Verify Deployment and Service:**
 
    ```bash
    kubectl get deployments
@@ -146,7 +162,7 @@ Before you begin, ensure you have:
 - **Scale Deployment:**
 
   ```bash
-  kubectl scale deployment nginx --replicas=3
+  kubectl scale deployment web-app --replicas=3
   ```
 
 ## 🛠 Troubleshooting
@@ -197,7 +213,6 @@ We welcome contributions! To get involved:
 2. Create a new branch for your changes.
 3. Make your changes and test them.
 4. Submit a pull request with a detailed description.
-
 
 ## 📜 License
 
