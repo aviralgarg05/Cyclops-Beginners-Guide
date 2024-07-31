@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains the configurations and scripts to deploy MyApp using Cyclops and Kubernetes.
+This repository contains the configurations and scripts to deploy an App using Cyclops and Kubernetes.
 
 ## Getting Started
 
